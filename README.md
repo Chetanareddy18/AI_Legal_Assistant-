@@ -1,41 +1,38 @@
-AI Legal Document Assistant
+AI Legal Document Assistant (RAG System)
 
-Retrieval-Augmented Generation (RAG) system using LangChain, Pinecone, WatsonX, FastAPI, and Streamlit.
+An AI-powered legal assistant that allows users to upload court case PDFs and ask questions strictly based on the document content.
+This project uses a Retrieval-Augmented Generation (RAG) pipeline built with LangChain, Pinecone, WatsonX, FastAPI, and Streamlit to ensure fully grounded, context-based answers.
 
-Overview
-
-This project is an AI-powered legal assistant that allows users to upload court case PDFs and ask questions based strictly on the document content. The system uses a Retrieval-Augmented Generation (RAG) pipeline to ensure responses are grounded in the provided text.
-
-Features
+🚀 Features
 
 PDF text extraction
 
-Text cleaning and chunking
+Text cleaning & chunking
 
 Embedding generation using Sentence Transformers
 
-Vector storage and retrieval using Pinecone
+Vector storage & retrieval using Pinecone
 
-RAG pipeline management using LangChain
+RAG pipeline orchestration using LangChain
 
-Answer generation using IBM WatsonX LLM
+Answer generation using IBM WatsonX.ai
 
-FastAPI backend for processing and retrieval
+FastAPI backend for document processing & retrieval
 
-Streamlit front-end for user interaction
+Streamlit frontend for user interaction
 
-Why We Use LangChain, Pinecone, and WatsonX Together
-Pinecone – Vector Storage & Retrieval
+🔗 Why LangChain, Pinecone, and WatsonX Together?
+📌 Pinecone – Vector Storage & Retrieval
 
-Stores all embeddings of document chunks
+Stores embeddings of document chunks
 
 Performs fast similarity search
 
-Returns top relevant text for answering queries
+Returns the most relevant context for answering queries
 
-LangChain – RAG Pipeline Orchestration
+📌 LangChain – RAG Pipeline Orchestration
 
-Loads and processes PDFs
+Loads & processes PDFs
 
 Splits text into chunks
 
@@ -45,29 +42,29 @@ Sends embeddings to Pinecone
 
 Retrieves relevant chunks
 
-Builds the final prompt sent to the LLM
+Builds the final prompt for the LLM
 
-WatsonX – Final Answer Generation
+📌 WatsonX – Final Answer Generation
 
-Receives context retrieved from Pinecone
+Receives retrieved context
 
-Generates structured, grounded, and accurate answers
+Generates structured, grounded, accurate answers
 
-Avoids hallucinations by relying on provided context
+Minimizes hallucinations by relying only on provided text
 
-How They Work Together
+⚙️ How the System Works
 
-LangChain extracts, cleans, and chunks PDF text.
+LangChain extracts, cleans, and chunks PDF text
 
-Embeddings are generated using Sentence Transformers.
+Sentence Transformers generate embeddings
 
-Pinecone stores and retrieves the embeddings.
+Pinecone stores and retrieves embeddings
 
-LangChain forms the final RAG prompt.
+LangChain constructs the RAG prompt
 
-WatsonX generates the final answer.
+WatsonX produces the final grounded answer
 
-Tech Stack
+🧩 Tech Stack
 Core Components
 
 IBM WatsonX.ai
@@ -96,7 +93,7 @@ requests
 
 os / json
 
-Project Structure
+📁 Project Structure
 project/
 │── backend/
 │   ├── main.py
@@ -114,13 +111,13 @@ project/
 │── requirements.txt
 │── README.md
 
-How to Run the Project
+🛠️ How to Run the Project
 1. Install Dependencies
 pip install -r requirements.txt
 
 2. Set Environment Variables
 
-Create .env file:
+Create a .env file in the project root:
 
 WATSONX_API_KEY=your_key
 PINECONE_API_KEY=your_key
@@ -132,64 +129,70 @@ uvicorn backend.main:app --reload
 4. Start Streamlit Frontend
 streamlit run frontend/app.py
 
-Workflow Summary
+🔄 Workflow Summary
 
-Upload a legal PDF.
+User uploads a legal PDF
 
-System extracts and cleans text.
+System extracts & cleans text
 
-Text is chunked and converted to embeddings.
+Text is chunked
 
-Embeddings stored in Pinecone.
+Embeddings generated
 
-When user asks a question, Pinecone retrieves matching chunks.
+Embeddings stored in Pinecone
 
-LangChain prepares the final prompt.
+User asks a question
 
-WatsonX generates a grounded answer.
+Pinecone retrieves relevant chunks
 
-Challenges Faced
+LangChain forms the final prompt
 
-Cleaning broken legal PDF formatting
+WatsonX generates a grounded answer
 
-Managing consistent Pinecone metadata
+🧠 Challenges Faced
 
-Fixing FastAPI request routing issues
+Cleaning poorly formatted legal PDFs
 
-Connecting Streamlit with backend
+Maintaining consistent Pinecone metadata
 
-Debugging multi-component pipeline
+Fixing FastAPI routing issues
 
-What I Learned
+Connecting Streamlit with backend API
 
-Building end-to-end RAG systems
+Debugging multi-component RAG pipeline
 
-Using Pinecone for high-quality semantic search
+📚 What I Learned
+
+Building full RAG systems end-to-end
+
+Semantic search using Pinecone
 
 Working with IBM WatsonX APIs
 
-Building API services with FastAPI
+Creating APIs using FastAPI
 
-Creating simple UI using Streamlit
+Developing UI with Streamlit
 
-Debugging multi-tool workflows
+Debugging multi-tool distributed workflows
 
-Future Improvements
+🚧 Future Improvements
 
-Deploy on cloud using Docker
+Deploy using Docker & cloud hosting
 
-Add multimodal RAG (OCR, scanned PDFs)
+Add multimodal RAG (OCR for scanned PDFs)
 
 Improve prompt templates
 
-Add multi-document support
+Add support for multiple documents
 
-References
+User authentication & history
 
-LangChain Docs
+📘 References
 
-IBM WatsonX.ai Docs
+LangChain Documentation
 
-Sentence Transformers Docs
+IBM WatsonX.ai Documentation
 
-Pinecone Docs
+Sentence Transformers Documentation
+
+Pinecone Documentation
