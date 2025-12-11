@@ -1,0 +1,140 @@
+{
+    "usage": {
+        "text_units": 3,
+        "text_characters": 28281,
+        "features": 2
+    },
+    "language": "en",
+    "keywords": [
+        {
+            "text": "age relaxation",
+            "relevance": 0.590233,
+            "count": 4
+        },
+        {
+            "text": "various reserved candidates",
+            "relevance": 0.578719,
+            "count": 1
+        },
+        {
+            "text": "OBC category",
+            "relevance": 0.572959,
+            "count": 3
+        },
+        {
+            "text": "such circumstances",
+            "relevance": 0.565857,
+            "count": 1
+        },
+        {
+            "text": "aforesaid general principles",
+            "relevance": 0.56156,
+            "count": 1
+        },
+        {
+            "text": "Jitendra Kumar Singh  & Anr",
+            "relevance": 0.552005,
+            "count": 1
+        },
+        {
+            "text": "respondent s-writ petitioner s",
+            "relevance": 0.550061,
+            "count": 1
+        },
+        {
+            "text": "recruitment process",
+            "relevance": 0.548904,
+            "count": 11
+        },
+        {
+            "text": "High Court",
+            "relevance": 0.543945,
+            "count": 8
+        },
+        {
+            "text": "unreserved category",
+            "relevance": 0.543803,
+            "count": 8
+        }
+    ],
+    "entities": [
+        {
+            "type": "Person",
+            "text": "Jitendra Kumar",
+            "relevance": 0.949324,
+            "count": 9,
+            "confidence": 0.999991
+        },
+        {
+            "type": "Date",
+            "text": "2019",
+            "relevance": 0.770245,
+            "count": 9,
+            "confidence": 0.932533
+        },
+        {
+            "type": "Number",
+            "text": "01.07",
+            "relevance": 0.592845,
+            "count": 4,
+            "confidence": 0.9984
+        },
+        {
+            "type": "Number",
+            "text": "25.03",
+            "relevance": 0.54016,
+            "count": 4,
+            "confidence": 0.9984
+        },
+        {
+            "type": "Organization",
+            "text": "SLP",
+            "relevance": 0.483522,
+            "count": 4,
+            "confidence": 0.999387
+        },
+        {
+            "type": "Date",
+            "text": "2017",
+            "relevance": 0.482761,
+            "count": 5,
+            "confidence": 0.85326
+        },
+        {
+            "type": "Date",
+            "text": "2025",
+            "relevance": 0.455477,
+            "count": 4,
+            "confidence": 0.96577
+        },
+        {
+            "type": "Date",
+            "text": "1994",
+            "relevance": 0.446438,
+            "count": 9,
+            "confidence": 0.999951
+        },
+        {
+            "type": "Organization",
+            "text": "Union of India",
+            "relevance": 0.408311,
+            "count": 2,
+            "confidence": 0.529145
+        },
+        {
+            "type": "Organization",
+            "text": "High Court",
+            "relevance": 0.404107,
+            "disambiguation": {
+                "subtype": [
+                    "MusicalGroup",
+                    "MusicalArtist"
+                ],
+                "name": "The_High_Court",
+                "dbpedia_resource": "http://dbpedia.org/resource/The_High_Court"
+            },
+            "count": 8,
+            "confidence": 0.990885
+        }
+    ]
+}

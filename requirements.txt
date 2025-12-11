@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+streamlit
+langchain
+langchain-community
+pinecone-client
+sentence-transformers
+pdfplumber
+python-dotenv
+pydantic
+requests
+ibm-watson
+ibm-watsonx-ai
+PyPDF2
+pandas
+numpy
