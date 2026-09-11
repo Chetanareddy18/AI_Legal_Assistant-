@@ -1,10 +1,15 @@
-import os
 import json
+import os
+
 import pandas as pd
 from dotenv import load_dotenv
-from ibm_watson import NaturalLanguageUnderstandingV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-from ibm_watson.natural_language_understanding_v1 import Features, EntitiesOptions, KeywordsOptions
+from ibm_watson import NaturalLanguageUnderstandingV1
+from ibm_watson.natural_language_understanding_v1 import (
+    EntitiesOptions,
+    Features,
+    KeywordsOptions,
+)
 from PyPDF2 import PdfReader
 
 load_dotenv()

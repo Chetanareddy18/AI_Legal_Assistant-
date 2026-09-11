@@ -48,3 +48,12 @@ results/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# =========================
+# Test / lint caches
+# =========================
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+

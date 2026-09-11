@@ -1,8 +1,15 @@
-import streamlit as st
-import pandas as pd
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import base64
 from datetime import datetime
-from rag_watsonx import generate_answer
+
+import pandas as pd
+
+import streamlit as st
+from src.rag_watsonx import generate_answer
 
 st.set_page_config(page_title="AI Legal Assistant", layout="wide")
 

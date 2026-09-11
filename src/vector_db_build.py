@@ -1,41 +1,34 @@
+"""Deprecated entry point kept for backward compatibility.
+
+Use ``python -m src.ingest`` instead, which supports both the FAISS and
+Pinecone backends via ``VECTOR_BACKEND``. This script now delegates to it,
+reading the same pre-computed chunk/embedding arrays and pushing them through
+``retriever.add_documents`` so either backend works unmodified.
+"""
 import os
+import sys
+
 import numpy as np
-from dotenv import load_dotenv
-from pinecone import Pinecone, ServerlessSpec
 
-load_dotenv()
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
-index_name = "legal-assistant-index"
+from src.logging_config import get_logger
+from src.vectorstore import get_retriever
 
-if index_name not in pc.list_indexes().names():
-    pc.create_index(
-        name=index_name,
-        dimension=384,
-        metric="cosine",
-        spec=ServerlessSpec(cloud="aws", region="us-east-1")
-    )
-
-index = pc.Index(index_name)
+logger = get_logger(__name__)
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
 EMB_DIR = os.path.join(ROOT, "embeddings")
 
-chunks = np.load(os.path.join(EMB_DIR, "chunks.npy"), allow_pickle=True)
-embeddings = np.load(os.path.join(EMB_DIR, "embeddings.npy"))
-refs = np.load(os.path.join(EMB_DIR, "refs.npy"), allow_pickle=True)
 
-payload = []
-for i in range(len(chunks)):
-    payload.append({
-        "id": str(i),
-        "values": embeddings[i].tolist(),
-        "metadata": {
-            "text": chunks[i],
-            "source": refs[i]
-        }
-    })
+def main() -> None:
+    chunks = np.load(os.path.join(EMB_DIR, "chunks.npy"), allow_pickle=True)
+    refs = np.load(os.path.join(EMB_DIR, "refs.npy"), allow_pickle=True)
 
-index.upsert(payload)
+    retriever = get_retriever()
+    count = retriever.add_documents(list(chunks), list(refs))
+    logger.info("Vector DB updated successfully: %d chunks indexed.", count)
 
-print("Vector DB updated successfully.")
+
+if __name__ == "__main__":
+    main()

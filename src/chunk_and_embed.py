@@ -1,9 +1,10 @@
-import os
 import json
+import os
+
 import numpy as np
 import pandas as pd
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
 RESULTS = os.path.join(ROOT, "results")
@@ -13,7 +14,7 @@ os.makedirs(EMB_DIR, exist_ok=True)
 embedder = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 def load_text(path):
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         data = json.load(f)
     if "text" in data:
         return data["text"]
