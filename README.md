@@ -1,4 +1,4 @@
-# AI Legal Document Assistant — Agentic RAG System
+# LexTrace — AI Legal Document Assistant (Agentic RAG)
 
 ![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)
@@ -67,7 +67,7 @@ Every step is recorded in an execution **trace** returned to the client for full
 ## Project Structure
 
 ```text
-ai-legal-assistant/
+LexTrace/
 |-- .env.example
 |-- .github/workflows/ci.yml
 |-- Dockerfile
@@ -117,8 +117,8 @@ ai-legal-assistant/
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/Chetanareddy18/AI_Legal_Assistant-.git
-cd AI_Legal_Assistant-
+git clone https://github.com/Chetanareddy18/LexTrace.git
+cd LexTrace
 pip install -r requirements.txt
 ```
 
